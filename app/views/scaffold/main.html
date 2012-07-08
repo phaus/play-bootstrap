@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${play.modules.scaffold.utils.Tags.openTemplateTag}get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/bootstrap.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/default.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/jquery-ui-1.8.2.custom.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/bootstrap-responsive.min.css'}">
+        ${play.modules.scaffold.utils.Tags.openTemplateTag}get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/images/favicon.png'}">
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/jquery-1.7.2.min.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/jquery-ui-1.8.2.custom.min.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body data-dateformat="${play.configuration['date.format']}">
+        ${play.modules.scaffold.utils.Tags.openTemplateTag}headerNavigation /}
+        <div class="container">
+            ${play.modules.scaffold.utils.Tags.openTemplateTag}if flash.error}
+            <div class="alert alert-block">
+                <a class="close" data-dismiss="alert" href="#">×</a>
+                <h4 class="alert-heading">Error!</h4>
+                <strong>${play.modules.scaffold.utils.Tags.openExpressionTag}play.i18n.Messages.get(flash.error)}</strong>
+            </div>
+            ${play.modules.scaffold.utils.Tags.openTemplateTag}/if}
+            ${play.modules.scaffold.utils.Tags.openTemplateTag}if flash.success}
+            <div class="alert alert-success">
+                <a class="close" data-dismiss="alert" href="#">×</a>
+                <h4 class="alert-heading">Success!</h4>
+                <strong>${play.modules.scaffold.utils.Tags.openExpressionTag}play.i18n.Messages.get(flash.success)}</strong>
+            </div>
+            ${play.modules.scaffold.utils.Tags.openTemplateTag}/if}
+
+            ${play.modules.scaffold.utils.Tags.openTemplateTag}doLayout /}
+            <hr />
+            <footer>
+            </footer>
+        </div>
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/bootstrap-tab.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+        ${play.modules.scaffold.utils.Tags.openTemplateTag}jsSetup /}
+        <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/default.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
+    </body>
+</html>

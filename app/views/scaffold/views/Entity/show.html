@@ -1,0 +1,19 @@
+${play.modules.scaffold.utils.Tags.openTemplateTag}extends 'main.html' /}
+${play.modules.scaffold.utils.Tags.openTemplateTag}set title:'Show ${entity.name}' /}
+<div class="row">
+    <div class="hero-unit">
+        <h2>Show ${entity.name}</h2>
+        <p>
+        <dl>
+            #{list items:entity.formElements, as:'elem'}
+            #{ifnot elem.isPassword()}
+            <dt>${elem.name}</dt><dd>#{scaffold.expression substitutions:[elem.modelName.lowerFirstChar(),elem.name], expr:'$1.$2' /}</dd>
+            #{/ifnot}
+            #{/list}
+        </dl>
+        </p>
+        <p>
+            <a class="btn btn-large btn-primary" href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.controllerName}.index}">&{'scaffold.back'}</a>
+        </p>
+    </div>
+</div>

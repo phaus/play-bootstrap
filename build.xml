@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="bsscaffold" default="build" basedir=".">
+
+    <path id="project.classpath">
+        <pathelement path="${play.path}/framework/classes"/>
+        <fileset dir="${play.path}/framework/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${play.path}/framework">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="build" depends="compile">
+
+        <copy todir="tmp/classes">
+            <fileset dir="src">
+                <include name="**/*.properties"/>
+                <include name="**/*.xml"/>
+                <include name="**/play.plugins"/>
+                <include name="**/play.static"/>
+            </fileset>
+        </copy>
+        <jar destfile="lib/play-bsscaffold.jar" basedir="tmp/classes">
+            <manifest>
+                <section name="Play-module">
+                    <attribute name="Specification-Title" value="bsscaffold"/>
+                </section>
+            </manifest>
+        </jar>
+        <delete dir="tmp" />
+    </target>
+
+    <target name="compile">
+        <mkdir dir="tmp/classes" />
+        <javac srcdir="src" destdir="tmp/classes" target="1.5" debug="true">
+            <classpath refid="project.classpath" />
+        </javac>
+    </target>
+
+    <target name="dist" depends="build">
+        <mkdir dir="dist" />   
+        <zip destfile="dist/bsscaffold-0.1.zip">
+            <zipfileset dir="app" prefix="app"/>
+            <zipfileset dir="src" prefix="src"/>
+            <zipfileset dir="lib" prefix="lib"/>
+            <zipfileset dir="public" prefix="public"/>
+            <zipfileset dir="conf" prefix="conf"/>
+            <zipfileset dir="documentation" prefix="documentation"/>
+            <zipfileset dir="." includes="commands.py"/>
+        </zip>
+    </target>
+
+</project>

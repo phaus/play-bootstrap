@@ -1,0 +1,36 @@
+${play.modules.scaffold.utils.Tags.openTemplateTag}extends 'main.html' /}
+${play.modules.scaffold.utils.Tags.openTemplateTag}set title:'${entity.controllerName}' /}
+<div class="row">
+    <h2>${entity.controllerName}</h2>
+    <table id="${entity.controllerName}-table" class="table table-striped">
+        <thead>
+            <tr>
+                <th><!-- actions --></th>
+		#{list items:entity.formElements, as:'elem'}
+	        #{ifnot elem.isPassword()}
+                <th>${elem.label}</th>
+	        #{/ifnot}
+		#{/list}
+            </tr>
+        </thead>
+        <tbody>
+	${play.modules.scaffold.utils.Tags.openTemplateTag}list items:entities, as:'entity'}
+            <tr>
+                <td>
+                    <a class="btn btn-danger" href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.controllerName}.delete(entity.${entity.idField})}" onclick="if (!confirm('&{'scaffold.delete.confirm'}')) return false;">&{'scaffold.delete'}</a>
+                    <a class="btn" href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.controllerName}.edit(entity.${entity.idField})}">&{'scaffold.edit'}</a>&nbsp;
+                    <a class="btn" href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.controllerName}.show(entity.${entity.idField})}">&{'scaffold.show'}</a>&nbsp;
+                </td>
+		#{list items:entity.formElements, as:'elem'}
+                #{ifnot elem.isPassword()}
+                <td>#{scaffold.expression substitutions:elem.name, expr:'entity.$1' /}</td>
+                #{/ifnot}
+		#{/list}
+            </tr>
+	${play.modules.scaffold.utils.Tags.openTemplateTag}/list}
+        </tbody>
+    </table>
+    <p>
+        <a class="btn btn-large btn-primary" href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.controllerName}.create}">&{'scaffold.create'}</a>
+    </p>
+</div>

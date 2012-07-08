@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/default.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/jquery-ui-1.8.2.custom.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap-responsive.min.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.7.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/jquery-ui-1.8.2.custom.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+            </head>
+    <body data-dateformat="yyyy-MM-dd">
+        #{headerNavigation /}
+        <div class="container">
+            #{if flash.error}
+            <div class="alert alert-block">
+                <a class="close" data-dismiss="alert" href="#">×</a>
+                <h4 class="alert-heading">Error!</h4>
+                <strong>${play.i18n.Messages.get(flash.error)}</strong>
+            </div>
+            #{/if}
+            #{if flash.success}
+            <div class="alert alert-success">
+                <a class="close" data-dismiss="alert" href="#">×</a>
+                <h4 class="alert-heading">Success!</h4>
+                <strong>${play.i18n.Messages.get(flash.success)}</strong>
+            </div>
+            #{/if}
+
+            #{doLayout /}
+            <hr />
+            <footer>
+            </footer>
+        </div>
+        <script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-tab.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{jsSetup /}
+        <script src="@{'/public/javascripts/default.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    </body>
+</html>

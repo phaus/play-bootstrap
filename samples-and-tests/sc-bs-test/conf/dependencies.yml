@@ -1,0 +1,12 @@
+# Application dependencies
+
+require:
+    - play
+    - local -> bsscaffold 0.1
+
+repositories:
+    - playCustomModules:
+        type:       local
+        artifact:   ${application.path}/../../dist/[module]-[revision].zip
+        contains:
+          - local -> *

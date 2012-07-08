@@ -1,0 +1,44 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="${play.modules.scaffold.utils.Tags.openActionTag}Application.index}">${applicationName}</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="${play.modules.scaffold.utils.Tags.openExpressionTag}request.controller =~ /Application/ ? 'active' : ''}"><a href="${play.modules.scaffold.utils.Tags.openActionTag}Application.index}">Home</a></li>
+                    #{list items:entities, as:'entity'}
+                    <li class="${play.modules.scaffold.utils.Tags.openExpressionTag}request.controller =~ /${entity.controllerName}/ ? 'active' : ''}">
+                        <a href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.subpackageAndControllerName}.index}">${entity.controllerName}</a>
+                    </li>
+                    #{/list}
+                </ul>
+
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown" id="header-menu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Menu
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${play.modules.scaffold.utils.Tags.openActionTag}Application.index}">Home</a></li>
+                            <li class="divider"></li>
+                            #{list items:entities, as:'entity'}
+                            <li>
+                                <a href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.subpackageAndControllerName}.index}">${entity.controllerName}</a>
+                            </li>
+                            #{/list}
+                        </ul>
+                    </li>
+                    #{if includeLogin}
+                    ${play.modules.scaffold.utils.Tags.openTemplateTag}if session.get("username") == null}
+                    <li><a href="/login">Login</a></li>
+                    ${play.modules.scaffold.utils.Tags.openTemplateTag}/if}
+                    ${play.modules.scaffold.utils.Tags.openTemplateTag}else}
+                    <li><a href="/logout">Logout</a></li>
+                    ${play.modules.scaffold.utils.Tags.openTemplateTag}/else}
+                    #{/if}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>

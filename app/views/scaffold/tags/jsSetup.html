@@ -1,0 +1,7 @@
+<script type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}">
+    var _TABLES = [
+    #{list items:entities, as:'entity'}
+    "#${entity.controllerName}-table"${entity_isLast ?'':',' }
+    #{/list}
+    ];
+</script>
