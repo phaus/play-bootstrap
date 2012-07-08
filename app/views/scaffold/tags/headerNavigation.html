@@ -5,18 +5,13 @@
             <div class="nav-collapse">
                 <ul class="nav">
                     <li class="${play.modules.scaffold.utils.Tags.openExpressionTag}request.controller =~ /Application/ ? 'active' : ''}"><a href="${play.modules.scaffold.utils.Tags.openActionTag}Application.index}">Home</a></li>
-                    #{list items:entities, as:'entity'}
-                    <li class="${play.modules.scaffold.utils.Tags.openExpressionTag}request.controller =~ /${entity.controllerName}/ ? 'active' : ''}">
-                        <a href="${play.modules.scaffold.utils.Tags.openActionTag}${entity.subpackageAndControllerName}.index}">${entity.controllerName}</a>
-                    </li>
-                    #{/list}
                 </ul>
 
                 <ul class="nav pull-right">
                     <li class="divider-vertical"></li>
                     <li class="dropdown" id="header-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Menu
+                            Controllers
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
