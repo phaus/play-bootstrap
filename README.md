@@ -23,3 +23,8 @@ and
 or use the script
 
 > ./generate.sh
+
+
+## Demo of a generated app
+
+http://radiant-earth-9626.herokuapp.com/
