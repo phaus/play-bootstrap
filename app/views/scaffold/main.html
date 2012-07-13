@@ -3,6 +3,10 @@
     <head>
         <title>${play.modules.scaffold.utils.Tags.openTemplateTag}get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/bootstrap.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/default.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="${play.modules.scaffold.utils.Tags.openActionTag}'/public/stylesheets/main.css'}">
@@ -15,7 +19,7 @@
         <script src="${play.modules.scaffold.utils.Tags.openActionTag}'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${play.modules.scaffold.utils.Tags.openExpressionTag}_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
-    <body data-dateformat="${play.configuration['date.format']}">
+    <body data-dateformat="${play.modules.scaffold.utils.Tags.openExpressionTag}play.configuration['date.format']}">
         ${play.modules.scaffold.utils.Tags.openTemplateTag}headerNavigation /}
         <div class="container">
             ${play.modules.scaffold.utils.Tags.openTemplateTag}if flash.error}

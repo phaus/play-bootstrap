@@ -88,7 +88,7 @@ ${play.modules.scaffold.utils.Tags.openTemplateTag}field '${entityVariable}.${_e
     #{else}
       <input type="text" name="${play.modules.scaffold.utils.Tags.expr('field.name')}" value="${play.modules.scaffold.utils.Tags.expr('field.value')}"/>
     #{/else}
-    ${play.modules.scaffold.utils.Tags.openTemplateTag}ifError 'entity.${_element.path}'}<p class="help-block alert alert-error">#{scaffold.expression entity:_element.path, expr:'errors.forKey(\'entity.$1\')' /}</p>${play.modules.scaffold.utils.Tags.openTemplateTag}/ifError}
+    ${play.modules.scaffold.utils.Tags.openTemplateTag}ifError '${entityVariable}.${_element.path}'}<span class="help-inline">${play.modules.scaffold.utils.Tags.openExpressionTag}errors.forKey('${entityVariable}.${_element.path}')}</span>${play.modules.scaffold.utils.Tags.openTemplateTag}/ifError}
   </div>
 </div>
 ${play.modules.scaffold.utils.Tags.openTemplateTag}/field}

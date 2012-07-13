@@ -1,23 +1,22 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
             <a class="brand" href="@{Application.index}">sc-bs-test</a>
             <div class="nav-collapse">
                 <ul class="nav">
                     <li class="${request.controller =~ /Application/ ? 'active' : ''}"><a href="@{Application.index}">Home</a></li>
-                                        <li class="${request.controller =~ /Bars/ ? 'active' : ''}">
-                        <a href="@{Bars.index}">Bars</a>
-                    </li>
-                                        <li class="${request.controller =~ /Foos/ ? 'active' : ''}">
-                        <a href="@{Foos.index}">Foos</a>
-                    </li>
-                                    </ul>
+                </ul>
 
                 <ul class="nav pull-right">
                     <li class="divider-vertical"></li>
                     <li class="dropdown" id="header-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Menu
+                            Controllers
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">

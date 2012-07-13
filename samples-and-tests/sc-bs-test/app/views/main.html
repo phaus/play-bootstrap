@@ -3,6 +3,10 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/default.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
@@ -14,7 +18,7 @@
         <script src="@{'/public/javascripts/jquery-ui-1.8.2.custom.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
             </head>
-    <body data-dateformat="yyyy-MM-dd">
+    <body data-dateformat="${play.configuration['date.format']}">
         #{headerNavigation /}
         <div class="container">
             #{if flash.error}
