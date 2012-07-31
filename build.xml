@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="bsscaffold" default="build" basedir=".">
+<project name="play-bootstrap" default="build" basedir=".">
 
     <path id="project.classpath">
         <pathelement path="${play.path}/framework/classes"/>
@@ -25,10 +25,10 @@
                 <include name="**/play.static"/>
             </fileset>
         </copy>
-        <jar destfile="lib/play-bsscaffold.jar" basedir="tmp/classes">
+        <jar destfile="lib/play-bootstrap.jar" basedir="tmp/classes">
             <manifest>
                 <section name="Play-module">
-                    <attribute name="Specification-Title" value="bsscaffold"/>
+                    <attribute name="Specification-Title" value="play-bootstrap"/>
                 </section>
             </manifest>
         </jar>
@@ -44,7 +44,7 @@
 
     <target name="dist" depends="build">
         <mkdir dir="dist" />   
-        <zip destfile="dist/bsscaffold-0.1.zip">
+        <zip destfile="dist/play-bootstrap-0.1.zip">
             <zipfileset dir="app" prefix="app"/>
             <zipfileset dir="src" prefix="src"/>
             <zipfileset dir="lib" prefix="lib"/>
