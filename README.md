@@ -1,4 +1,4 @@
-Play--BSScaffold
+play-bootstrap
 ================
 
 A Bootstrap Scaffold Module for the Play Framework. Based on the original Scaffold Module.
@@ -10,7 +10,7 @@ A Bootstrap Scaffold Module for the Play Framework. Based on the original Scaffo
 
 Then
 
-> cd samples-and-tests
+> cd samples-and-tests/sc-bs-test
 
 after that
 
@@ -28,3 +28,14 @@ or use the script
 ## Demo of a generated app
 
 http://radiant-earth-9626.herokuapp.com/
+
+
+## Links
+
+* original Scaffold Module
+
+https://github.com/lmcalpin/Play--Scaffold
+
+* Bootstrap Homepage
+
+http://twitter.github.com/bootstrap
