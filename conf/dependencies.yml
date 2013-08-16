@@ -1,1 +1,4 @@
 self: play -> play-bootstrap 0.1
+
+require:
+    - play
